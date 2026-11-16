@@ -1,0 +1,438 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Portfolio | Chawin Kaewkrajai</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Tahoma, sans-serif;
+    background: #f3f7fc;
+    color: #24344d;
+    line-height: 1.8;
+}
+
+header {
+    background: #102b50;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+header h1 {
+    font-size: 27px;
+}
+
+nav {
+    background: #174777;
+    padding: 15px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 13px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #70d6ff;
+}
+
+.hero {
+    background: linear-gradient(135deg, #102b50, #3289c9);
+    color: white;
+    text-align: center;
+    padding: 65px 20px;
+}
+
+.hero img {
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    border: 5px solid white;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.hero h2 {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 17px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 25px 20px;
+}
+
+section {
+    background: white;
+    padding: 30px;
+    margin: 25px 0;
+    border-radius: 18px;
+    box-shadow: 0 5px 20px #0000000c;
+}
+
+section h2 {
+    color: #174777;
+    border-left: 5px solid #39a0ed;
+    padding-left: 15px;
+    margin-bottom: 20px;
+}
+
+section p {
+    font-size: 16px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns:
+    repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #edf6ff;
+    padding: 22px;
+    border-radius: 15px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    color: #174777;
+    margin-bottom: 10px;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns:
+    repeat(auto-fit, minmax(270px, 1fr));
+    gap: 22px;
+    margin-top: 25px;
+}
+
+.portfolio-item {
+    background: #edf6ff;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.portfolio-info {
+    padding: 18px;
+}
+
+.portfolio-info h3 {
+    color: #174777;
+    margin-bottom: 8px;
+}
+
+.portfolio-info p {
+    font-size: 14px;
+}
+
+#lightbox {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    inset: 0;
+    background: #000e;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+#lightbox img {
+    max-width: 95%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+#lightbox span {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+footer {
+    background: #102b50;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+@media(max-width:600px) {
+    nav a {
+        display: inline-block;
+        margin: 5px;
+        font-size: 13px;
+    }
+
+    .hero h2 {
+        font-size: 27px;
+    }
+
+    section {
+        padding: 20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>MY PERSONAL PORTFOLIO</h1>
+    <p>เว็บไซต์แนะนำตัวและรวบรวมผลงาน</p>
+</header>
+
+<nav>
+    <a href="#about">แนะนำตนเอง</a>
+    <a href="#interest">สิ่งที่สนใจ</a>
+    <a href="#portfolio">ผลงาน</a>
+    <a href="#passion">สิ่งที่หลงใหล</a>
+</nav>
+
+<!-- หน้าแรก -->
+<div class="hero">
+    <img src="images/profile.jpg" alt="รูปแนะนำตัว">
+    <h2>สวัสดีครับ ผมชื่อ ชวิน</h2>
+    <p>นายชวิน แก้วกระจาย</p>
+    <p>นักเรียนชั้นมัธยมศึกษาปีที่ 6/1</p>
+    <p>Welcome to My Portfolio</p>
+</div>
+
+<div class="container">
+
+<!-- 1 แนะนำตนเอง -->
+<section id="about">
+    <h2>1. แนะนำตนเอง | About Me</h2>
+
+    <p>
+        สวัสดีครับ ผมชื่อ นายชวิน แก้วกระจาย
+        ปัจจุบันกำลังศึกษาอยู่ระดับชั้นมัธยมศึกษาปีที่ 6/1
+        โรงเรียนทุ่งใหญ่เฉลิมราชอนุสรณ์
+    </p>
+
+    <p>
+        ผมเป็นคนที่ชอบเรียนรู้สิ่งใหม่ ๆ
+        มีความสนใจในด้านธรรมชาติ การประมง
+        และกิจกรรมที่ช่วยพัฒนาทักษะของตนเอง
+        ผมเชื่อว่าทุกประสบการณ์เป็นโอกาสในการเรียนรู้
+        และพัฒนาตนเองให้ดียิ่งขึ้น
+    </p>
+</section>
+
+<!-- 2 สิ่งที่สนใจ -->
+<section id="interest">
+    <h2>2. สิ่งที่สนใจ | My Interests</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>🐟 การประมง</h3>
+            <p>
+                สนใจการเลี้ยงปลา สัตว์น้ำ
+                การเพาะเลี้ยงสัตว์น้ำ
+                และทรัพยากรทางการประมง
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🌱 ธรรมชาติ</h3>
+            <p>
+                สนใจระบบนิเวศ การอนุรักษ์สิ่งแวดล้อม
+                และความหลากหลายทางชีวภาพ
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>💻 เทคโนโลยี</h3>
+            <p>
+                สนใจเทคโนโลยีสมัยใหม่
+                การออกแบบ และการสร้างสรรค์ผลงาน
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🎖️ กิจกรรมพัฒนาตนเอง</h3>
+            <p>
+                สนใจกิจกรรมที่ช่วยฝึกระเบียบวินัย
+                ความรับผิดชอบ และการทำงานเป็นทีม
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- 3 ผลงาน -->
+<section id="portfolio">
+    <h2>3. ผลงาน | My Portfolio</h2>
+
+    <p>
+        รวบรวมเกียรติบัตร กิจกรรม และประสบการณ์
+        ที่ผมได้รับจากการเข้าร่วมกิจกรรมต่าง ๆ
+    </p>
+
+    <div class="portfolio-grid">
+
+        <div class="portfolio-item">
+            <img src="images/IMG_8720.jpeg"
+                 alt="เกียรติบัตรอบรมวิชาทหาร"
+                 onclick="showImage(this.src)">
+
+            <div class="portfolio-info">
+                <h3>การอบรมวิชาทหาร</h3>
+                <p>
+                    ผ่านการอบรมเรื่องขับขี่ปลอดภัย
+                    วินัยจราจร และสารเสพติด
+                </p>
+            </div>
+        </div>
+
+        <div class="portfolio-item">
+            <img src="images/IMG_8719.jpeg"
+                 alt="เกียรติบัตรทดสอบกำลังกาย"
+                 onclick="showImage(this.src)">
+
+            <div class="portfolio-info">
+                <h3>การทดสอบกำลังกาย</h3>
+                <p>
+                    ผ่านการทดสอบกำลังกระโดดหอสูง
+                    34 ฟุต
+                </p>
+            </div>
+        </div>
+
+        <div class="portfolio-item">
+            <img src="images/IMG_8718.jpeg"
+                 alt="เกียรติบัตรการแข่งขันวิทยาศาสตร์"
+                 onclick="showImage(this.src)">
+
+            <div class="portfolio-info">
+                <h3>การแข่งขันวิทยาศาสตร์</h3>
+                <p>
+                    ได้รับรางวัลระดับเหรียญเงิน
+                    การแข่งขันประดิษฐ์รถบรรทุก
+                    งานศิลปหัตถกรรมนักเรียน
+                </p>
+            </div>
+        </div>
+
+        <div class="portfolio-item">
+            <img src="images/IMG_8717.jpeg"
+                 alt="เกียรติบัตรด้านการเกษตร"
+                 onclick="showImage(this.src)">
+
+            <div class="portfolio-info">
+                <h3>กิจกรรมด้านการเกษตร</h3>
+                <p>
+                    เข้ารับบริการและอบรมด้านการเกษตร
+                    ตามโครงการคลินิกเกษตรเคลื่อนที่
+                </p>
+            </div>
+        </div>
+
+        <div class="portfolio-item">
+            <img src="images/IMG_8716.jpeg"
+                 alt="เกียรติบัตรกิจกรรมปลูกป่าชายเลน"
+                 onclick="showImage(this.src)">
+
+            <div class="portfolio-info">
+                <h3>กิจกรรมจิตอาสา</h3>
+                <p>
+                    เข้าร่วมกิจกรรมปลูกป่าชายเลน
+                    เพื่ออนุรักษ์ทรัพยากรธรรมชาติ
+                    และสิ่งแวดล้อม
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- 4 สิ่งที่หลงใหล -->
+<section id="passion">
+    <h2>4. สิ่งที่หลงใหล | My Passion</h2>
+
+    <p>
+        สิ่งที่ผมหลงใหลคือโลกใต้น้ำและสิ่งมีชีวิตในธรรมชาติ
+        ผมชื่นชอบการเลี้ยงปลา การศึกษาพฤติกรรมของสัตว์น้ำ
+        และการเรียนรู้เกี่ยวกับระบบนิเวศทางน้ำ
+    </p>
+
+    <p>
+        ผมมีความตั้งใจที่จะนำความชอบและความสนใจเหล่านี้
+        มาต่อยอดเป็นความรู้ในระดับมหาวิทยาลัย
+        โดยเฉพาะด้านทรัพยากรการประมง
+        เพื่อเป็นส่วนหนึ่งในการอนุรักษ์
+        และพัฒนาทรัพยากรสัตว์น้ำในอนาคต
+    </p>
+</section>
+
+</div>
+
+<!-- ระบบขยายรูป -->
+<div id="lightbox" onclick="closeImage()">
+    <span>&times;</span>
+    <img id="largeImage" src="" alt="ภาพขยาย">
+</div>
+
+<footer>
+    <h3>THANK YOU</h3>
+    <p>ขอบคุณที่เข้าชมเว็บไซต์แนะนำตัวของผม</p>
+    <p>Created by Chawin Kaewkrajai</p>
+    <p>© 2026 My Personal Portfolio</p>
+</footer>
+
+<script>
+function showImage(src) {
+    document.getElementById("lightbox").style.display = "flex";
+    document.getElementById("largeImage").src = src;
+}
+
+function closeImage() {
+    document.getElementById("lightbox").style.display = "none";
+}
+</script>
+
+</body>
+</html>
